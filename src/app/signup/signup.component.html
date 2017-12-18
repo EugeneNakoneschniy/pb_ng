@@ -1,0 +1,19 @@
+<form class="mt-2" (ngSubmit)="onSignUp(f)" #f="ngForm">
+  <div class="form-group">
+    <label for="up-name" class="col-form-label col-form-label-sm">Name</label>
+    <input type="text" ngModel name="name" id="up-name" class="form-control form-control-sm rounded-0" placeholder="Enter Name" required>
+  </div>
+  <div class="form-group">
+    <label for="up-email" class="col-form-label col-form-label-sm">Email</label>
+    <input type="email" ngModel name="email" id="up-email" class="form-control form-control-sm rounded-0" placeholder="Enter email" required>
+  </div>
+  <div class="form-group">
+    <label for="up-pass" class="col-form-label col-form-label-sm">Password</label>
+    <input type="password" ngModel name="password" id="up-pass" class="form-control form-control-sm rounded-0" placeholder="Password" required>
+  </div>
+  <div class="form-group">
+    <label for="up-conf-pass" class="col-form-label col-form-label-sm">Confirm Password</label>
+    <input type="password" ngModel name="password_confirmation" id="up-conf-pass" class="form-control form-control-sm rounded-0" placeholder="Confirm Password" required>
+  </div>
+  <button type="submit" [disabled]="!f.valid"  class="btn btn-sm btn-block btn-info mt-3 rounded-0">Sign up</button>
+</form>
