@@ -10,13 +10,13 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
   signup(data) {
-    return this.http.post('http://private-blog.dev/api/user', data, {
-      headers: new HttpHeaders({'X-Requested-With': 'XMLHttpRequest'})
+    return this.http.post('http://lara.dev/api/user', data, {
+      headers: new HttpHeaders({'X-Requested-With': 'XMLHttpRequest', 'Access-Control-Allow-Origin': '*'})
     });
   }
   signin(data): Observable<Auth> {
-    return this.http.post<Auth>('http://private-blog.dev/api/user/signin', data, {
-      headers: new HttpHeaders({'X-Requested-With': 'XMLHttpRequest'})
+    return this.http.post<Auth>('http://lara.dev/api/user/signin', data, {
+      headers: new HttpHeaders({'X-Requested-With': 'XMLHttpRequest', 'Access-Control-Allow-Origin': '*', 'Origin': 'http://lara.dev'})
     }).pipe(
       tap((auth: Auth) => window.localStorage.setItem('token', auth.token))
       /*catchError(this.handleError('signin', []))*/
